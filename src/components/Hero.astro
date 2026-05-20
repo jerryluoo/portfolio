@@ -1,31 +1,49 @@
-<section id="about" class="min-h-screen flex items-center pt-16">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+<section id="about" class="min-h-screen flex items-center pt-16 gradient-bg">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
     <div class="max-w-3xl">
-      <p class="text-primary font-medium mb-4 animate-fade-in-up">Hi, my name is</p>
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 animate-fade-in-up" style="animation-delay: 0.1s;">
-        Jerry Luo
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 dark:bg-primary/20 border border-primary/20 dark:border-primary/30 mb-8 animate-fade-in-up">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-sm font-medium text-primary dark:text-primary-light">Available for opportunities</span>
+      </div>
+
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up" style="animation-delay: 0.1s;">
+        Hi, I'm <span class="gradient-text">Jerry Luo</span>
       </h1>
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-600 dark:text-gray-400 mb-6 animate-fade-in-up" style="animation-delay: 0.2s;">
-        I build things for the web.
-      </h2>
-      <p class="text-lg text-gray-600 dark:text-gray-400 max-w-xl mb-8 animate-fade-in-up" style="animation-delay: 0.3s;">
-        I'm a software engineer passionate about creating elegant, performant applications. 
-        Currently focused on full-stack development with modern web technologies.
+
+      <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
+        Software engineer crafting elegant, high-performance applications with modern web technologies.
       </p>
-      <div class="flex flex-wrap gap-4 animate-fade-in-up" style="animation-delay: 0.4s;">
+
+      <div class="flex flex-wrap gap-4 animate-fade-in-up" style="animation-delay: 0.3s;">
         <a
           href="#projects"
-          class="inline-flex items-center px-6 py-3 rounded-lg bg-primary text-white font-medium hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-gray-950"
+          class="group inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-semibold shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-gray-950"
         >
           View My Work
+          <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
         </a>
         <a
           href="#contact"
-          class="inline-flex items-center px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-medium hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-gray-950"
+          class="inline-flex items-center px-7 py-3.5 rounded-xl border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-semibold hover:border-primary/50 dark:hover:border-primary/50 hover:text-primary dark:hover:text-primary-light hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-gray-950"
         >
           Get in Touch
         </a>
       </div>
+
+      <!-- Tech stack pills -->
+      <div class="flex flex-wrap gap-2 mt-12 animate-fade-in-up" style="animation-delay: 0.4s;">
+        {['TypeScript', 'React', 'Astro', 'Node.js', 'Rust'].map((tech) => (
+          <span class="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 dark:bg-gray-800/80 text-gray-600 dark:text-gray-400 border border-gray-200/50 dark:border-gray-700/50">
+            {tech}
+          </span>
+        ))}
+      </div>
     </div>
   </div>
+
+  <!-- Decorative elements -->
+  <div class="absolute top-1/4 right-10 w-72 h-72 bg-primary/10 dark:bg-primary/5 rounded-full blur-3xl animate-float pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute bottom-1/4 right-1/4 w-48 h-48 bg-accent/10 dark:bg-accent/5 rounded-full blur-3xl animate-float pointer-events-none" style="animation-delay: -3s;" aria-hidden="true"></div>
 </section>
