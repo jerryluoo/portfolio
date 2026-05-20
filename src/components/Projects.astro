@@ -1,13 +1,19 @@
 ---
+const featured = {
+  title: 'NexTax',
+  description: 'A local-first privacy layer for AI-powered tax filing. Extracts text from tax PDFs, detects and redacts all PII using Microsoft Presidio + custom tax recognizers, stores sensitive data in an AES-encrypted vault, and sends only sanitized text to Claude. Zero PII ever leaves your machine.',
+  highlights: [
+    '159 tests including dedicated PII leak prevention',
+    'Full federal tax calculator (all 7 brackets, SE tax, QBI, NIIT)',
+    'Smart tokenization preserves financial data AI needs for calculations',
+    'Supports W-2, 1099s, Schedule C/E, K-1, and more',
+  ],
+  tags: ['Python', 'AI/LLM', 'Privacy', 'Microsoft Presidio', 'AES Encryption', 'OCR'],
+  github: 'https://github.com/jerryluoo/NexTax',
+  gradient: 'from-primary/20 via-accent/10 to-emerald-500/20',
+};
+
 const projects = [
-  {
-    title: 'Project One',
-    description: 'A full-stack web application built with modern technologies. Features real-time updates, authentication, and a responsive design.',
-    tags: ['TypeScript', 'React', 'Node.js', 'PostgreSQL'],
-    github: 'https://github.com/jerryluoo/project-one',
-    live: '#',
-    gradient: 'from-primary/20 to-accent/20',
-  },
   {
     title: 'Project Two',
     description: 'An open-source CLI tool that automates common development workflows. Supports multiple languages and integrates with popular services.',
@@ -36,12 +42,101 @@ const projects = [
       <div class="h-px flex-1 bg-gradient-to-r from-primary/30 to-transparent"></div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Featured project (NexTax) -->
+    <div class="group relative mb-8 animate-on-scroll">
+      <div class={`absolute inset-0 bg-gradient-to-br ${featured.gradient} rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500`} aria-hidden="true"></div>
+      <div class="relative glass rounded-3xl p-8 sm:p-10 hover:glow transition-all duration-300">
+        <div class="flex flex-col lg:flex-row lg:items-start gap-8">
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/20">
+                <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-primary dark:group-hover:text-primary-light transition-colors">
+                  {featured.title}
+                </h3>
+                <span class="text-xs font-medium text-accent dark:text-accent-light uppercase tracking-wider">Featured Project</span>
+              </div>
+            </div>
+
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+              {featured.description}
+            </p>
+
+            <ul class="space-y-2 mb-6">
+              {featured.highlights.map((item) => (
+                <li class="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+                  <svg class="w-4 h-4 text-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="flex flex-wrap gap-2 mb-6">
+              {featured.tags.map((tag) => (
+                <span class="text-xs px-3 py-1.5 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary-light font-medium border border-primary/20 dark:border-primary/30">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <a
+              href={featured.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-semibold hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+
+          <!-- Architecture diagram -->
+          <div class="lg:w-80 flex-shrink-0">
+            <div class="bg-gray-50 dark:bg-gray-900/80 rounded-2xl p-5 border border-gray-200/50 dark:border-gray-700/50 font-mono text-xs leading-relaxed">
+              <div class="text-gray-500 dark:text-gray-500 mb-3 font-sans text-[10px] uppercase tracking-wider font-semibold">How it works</div>
+              <div class="space-y-2 text-gray-600 dark:text-gray-400">
+                <div class="flex items-center gap-2">
+                  <span class="w-5 h-5 rounded bg-primary/20 dark:bg-primary/30 flex items-center justify-center text-primary text-[10px] font-bold">1</span>
+                  <span>Extract text from PDF/image</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-5 h-5 rounded bg-primary/20 dark:bg-primary/30 flex items-center justify-center text-primary text-[10px] font-bold">2</span>
+                  <span>Detect PII (Presidio + NER)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-5 h-5 rounded bg-primary/20 dark:bg-primary/30 flex items-center justify-center text-primary text-[10px] font-bold">3</span>
+                  <span>Tokenize: SSN → [SSN_1]</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-5 h-5 rounded bg-accent/20 dark:bg-accent/30 flex items-center justify-center text-accent text-[10px] font-bold">4</span>
+                  <span>Send sanitized text to AI</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-5 h-5 rounded bg-emerald-500/20 dark:bg-emerald-500/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-[10px] font-bold">5</span>
+                  <span>Rehydrate response locally</span>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-gray-200 dark:border-gray-700">
+                <div class="text-emerald-600 dark:text-emerald-400 font-sans font-semibold text-[11px]">Zero PII leaves your machine</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other projects -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {projects.map((project, i) => (
         <article class="group relative animate-on-scroll" style={`transition-delay: ${i * 100}ms`}>
           <div class={`absolute inset-0 bg-gradient-to-br ${project.gradient} rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500`} aria-hidden="true"></div>
           <div class="relative glass rounded-2xl p-6 h-full flex flex-col hover:-translate-y-1 transition-all duration-300">
-            <!-- Header -->
             <div class="flex items-center justify-between mb-5">
               <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 dark:from-primary/30 dark:to-accent/30 flex items-center justify-center">
                 <svg class="w-5 h-5 text-primary dark:text-primary-light" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -64,7 +159,6 @@ const projects = [
               </div>
             </div>
 
-            <!-- Content -->
             <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-primary dark:group-hover:text-primary-light transition-colors">
               {project.title}
             </h3>
@@ -72,7 +166,6 @@ const projects = [
               {project.description}
             </p>
 
-            <!-- Tags -->
             <div class="flex flex-wrap gap-2">
               {project.tags.map((tag) => (
                 <span class="text-xs px-2.5 py-1 rounded-lg bg-gray-100/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-400 font-medium">
