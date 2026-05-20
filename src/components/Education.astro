@@ -1,0 +1,53 @@
+---
+const education = [
+  {
+    school: 'University Name',
+    degree: 'Bachelor of Science in Computer Science',
+    period: '2020 – 2024',
+    details: [
+      'GPA: 3.8/4.0',
+      'Relevant coursework: Data Structures, Algorithms, Systems Programming, Databases',
+      'Dean\'s List all semesters',
+    ],
+  },
+];
+---
+
+<section id="education" class="py-20 bg-gray-50 dark:bg-gray-900/50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-12 animate-on-scroll">
+      Education
+    </h2>
+    <div class="relative">
+      <div class="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-800" aria-hidden="true"></div>
+
+      <div class="space-y-12">
+        {education.map((edu) => (
+          <div class="relative pl-8 md:pl-20 animate-on-scroll">
+            <div class="absolute left-0 md:left-8 top-1.5 -translate-x-1/2 w-3 h-3 rounded-full bg-secondary border-2 border-white dark:border-gray-950" aria-hidden="true"></div>
+
+            <div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-100 dark:border-gray-800">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                  {edu.degree}
+                </h3>
+                <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0">
+                  {edu.period}
+                </span>
+              </div>
+              <p class="text-secondary font-medium text-sm mb-3">{edu.school}</p>
+              <ul class="space-y-2">
+                {edu.details.map((item) => (
+                  <li class="text-gray-600 dark:text-gray-400 text-sm flex items-start gap-2">
+                    <span class="text-secondary mt-1.5 flex-shrink-0" aria-hidden="true">▸</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

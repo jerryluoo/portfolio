@@ -1,0 +1,40 @@
+---
+const skillCategories = [
+  {
+    name: 'Languages',
+    skills: ['TypeScript', 'JavaScript', 'Python', 'Rust', 'SQL', 'HTML/CSS'],
+  },
+  {
+    name: 'Frameworks & Libraries',
+    skills: ['React', 'Next.js', 'Astro', 'Node.js', 'Express', 'Tailwind CSS'],
+  },
+  {
+    name: 'Tools & Platforms',
+    skills: ['Git', 'Docker', 'AWS', 'PostgreSQL', 'Redis', 'GitHub Actions'],
+  },
+];
+---
+
+<section id="skills" class="py-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-12 animate-on-scroll">
+      Skills
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {skillCategories.map((category) => (
+        <div class="animate-on-scroll">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+            {category.name}
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {category.skills.map((skill) => (
+              <span class="px-3 py-1.5 text-sm rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
