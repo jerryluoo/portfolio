@@ -25,7 +25,7 @@ const education = [
     <div class="space-y-6">
       {education.map((edu, i) => (
         <div class="group relative animate-on-scroll" style={`transition-delay: ${i * 100}ms`}>
-          <div class="absolute -inset-x-4 -inset-y-2 rounded-2xl bg-gradient-to-r from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true"></div>
+          <div class="absolute -inset-x-4 -inset-y-2 rounded-2xl bg-gradient-to-r from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" aria-hidden="true"></div>
           <div class="relative glass rounded-2xl p-6 sm:p-8 hover:glow transition-all duration-300">
             <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
               <div>

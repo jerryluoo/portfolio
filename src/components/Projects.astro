@@ -44,7 +44,7 @@ const projects = [
 
     <!-- Featured project (NexTax) -->
     <div class="group relative mb-8 animate-on-scroll">
-      <div class={`absolute inset-0 bg-gradient-to-br ${featured.gradient} rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500`} aria-hidden="true"></div>
+      <div class={`absolute inset-0 bg-gradient-to-br ${featured.gradient} rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 pointer-events-none`} aria-hidden="true"></div>
       <div class="relative glass rounded-3xl p-8 sm:p-10 hover:glow transition-all duration-300">
         <div class="flex flex-col lg:flex-row lg:items-start gap-8">
           <div class="flex-1">
@@ -135,7 +135,7 @@ const projects = [
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {projects.map((project, i) => (
         <article class="group relative animate-on-scroll" style={`transition-delay: ${i * 100}ms`}>
-          <div class={`absolute inset-0 bg-gradient-to-br ${project.gradient} rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500`} aria-hidden="true"></div>
+          <div class={`absolute inset-0 bg-gradient-to-br ${project.gradient} rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 pointer-events-none`} aria-hidden="true"></div>
           <div class="relative glass rounded-2xl p-6 h-full flex flex-col hover:-translate-y-1 transition-all duration-300">
             <div class="flex items-center justify-between mb-5">
               <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 dark:from-primary/30 dark:to-accent/30 flex items-center justify-center">
